@@ -66,6 +66,15 @@ namespace ByteBank.Modelos
         }
 
         /// <summary>
+        ///     Sobrecarga do método ToString() informando dados da conta.
+        /// </summary>
+        /// <returns>Retorna dados da conta.</returns>
+        public override string ToString()
+        {
+            return $"Numero {Numero}, Agência {Agencia}, Saldo {Saldo}";
+        }
+
+        /// <summary>
         /// Realiza o saque e atualiza o valor da propriedade <see cref="Saldo"/>.
         /// </summary>
         /// <exception cref="ArgumentException"> Exceção lançada quando um valor negativo é utilizado no argumento <paramref name="valor"/>. </exception>
