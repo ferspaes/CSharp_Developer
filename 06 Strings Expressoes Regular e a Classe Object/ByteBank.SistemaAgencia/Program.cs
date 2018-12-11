@@ -52,7 +52,7 @@ namespace ByteBank.SistemaAgencia
             Console.Read();
         }
 
-        public static void TestarString()
+        public static void TestarStringExpressoesRegulares()
         {
             string padrao = "[0-9]{4,5}-?[0-9]{4}";
             string testePadrao = "Olá meu telefone é 99156-7468.";
