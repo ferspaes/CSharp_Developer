@@ -15,7 +15,7 @@ This course is from Alura and the URL is right here [Alura - C Sharp Developer C
 
 ###### 2 - Follow through the installation guide and it'll be OK, you got install at least the c# development option.
 
-### Learning Procces:
+### Learning Proccess:
 
 ###### 1 - Select a folder with the topic you want to learn and read the readme tutorial for each topic.
 
