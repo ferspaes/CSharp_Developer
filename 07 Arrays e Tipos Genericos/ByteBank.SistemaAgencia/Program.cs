@@ -12,13 +12,35 @@ namespace ByteBank.SistemaAgencia
     {
         static void Main(string[] args)
         {
-            int[] idades = new int[5];
+            int[] idades = null;
+            idades = new int[5];
 
             idades[0] = 15;
             idades[1] = 30;
             idades[2] = 45;
             idades[3] = 60;
             idades[4] = 75;
+
+            int indiceQuatro = idades[4];
+
+            int indiceSoma = idades[2 + 2];
+
+            int indice = 4;
+            int usandoIndice = idades[indice];
+
+            int[] outroArray = idades;
+
+            bool[] arrayBooleans = new bool[8];
+
+            arrayBooleans[0] = true;
+            arrayBooleans[1] = false;
+            arrayBooleans[2] = true;
+            arrayBooleans[3] = false;
+            arrayBooleans[4] = true;
+            arrayBooleans[5] = false;
+            arrayBooleans[6] = true;
+            arrayBooleans[7] = false;
+            arrayBooleans[8] = true;
 
             foreach (var idade in idades)
                 Console.WriteLine(idade);
