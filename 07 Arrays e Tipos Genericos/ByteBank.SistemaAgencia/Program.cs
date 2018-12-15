@@ -12,6 +12,19 @@ namespace ByteBank.SistemaAgencia
     {
         static void Main(string[] args)
         {
+            ContaCorrente[] contas = new ContaCorrente[]
+            {
+                new ContaCorrente(123, 456),
+                new ContaCorrente(789,0123),
+                new ContaCorrente(0123,456789)
+            };
+
+            for (int i = 0; i < contas.Length; i++)
+            {
+                int numeroConta = contas[i].Numero;
+                Console.WriteLine($"O numero da conta de conta[{i}] = {numeroConta}");
+            }
+
             int[] idades = null;
             idades = new int[5];
 
@@ -40,7 +53,6 @@ namespace ByteBank.SistemaAgencia
             arrayBooleans[5] = false;
             arrayBooleans[6] = true;
             arrayBooleans[7] = false;
-            arrayBooleans[8] = true;
 
             foreach (var idade in idades)
                 Console.WriteLine(idade);
