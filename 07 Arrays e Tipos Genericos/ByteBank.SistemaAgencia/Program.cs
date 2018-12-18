@@ -12,12 +12,32 @@ namespace ByteBank.SistemaAgencia
     {
         static void Main(string[] args)
         {
+            ListaDeContaCorrente lista = new ListaDeContaCorrente();
+            lista.Adicionar(new ContaCorrente(1234, 123456));
+            lista.Adicionar(new ContaCorrente(1234, 456789));
+            lista.Adicionar(new ContaCorrente(1234, 789012));
+            lista.Adicionar(new ContaCorrente(1234, 012345));
+            lista.Adicionar(new ContaCorrente(5678, 123456));
+            lista.Adicionar(new ContaCorrente(5678, 456789));
+            lista.Adicionar(new ContaCorrente(5678, 789012));
+            lista.Adicionar(new ContaCorrente(5678, 012345));
+            lista.Adicionar(new ContaCorrente(9012, 012345));
+            lista.Adicionar(new ContaCorrente(9012, 567890));
+            lista.Adicionar(new ContaCorrente(9012, 456789));
+            lista.Adicionar(new ContaCorrente(9012, 789012));
+
+            TestaArray();
+            Console.ReadLine();
+        }
+
+        private static void TestaArray()
+        {
             ContaCorrente[] contas = new ContaCorrente[]
-            {
+                        {
                 new ContaCorrente(123, 456),
                 new ContaCorrente(789,0123),
                 new ContaCorrente(0123,456789)
-            };
+                        };
 
             for (int i = 0; i < contas.Length; i++)
             {
@@ -56,8 +76,6 @@ namespace ByteBank.SistemaAgencia
 
             foreach (var idade in idades)
                 Console.WriteLine(idade);
-
-            Console.ReadLine();
         }
     }
 }
