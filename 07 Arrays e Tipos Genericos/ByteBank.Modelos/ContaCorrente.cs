@@ -13,17 +13,41 @@ namespace ByteBank.Modelos
     {
         private static int TaxaOperacao;
 
+        /// <summary>
+        /// Armazena a quantidade de contas que foram instanciadas ao longo do projeto.
+        /// </summary>
         public static int TotalDeContasCriadas { get; private set; }
 
+        /// <summary>
+        /// Armazena dados sobre o titular da conta.
+        /// </summary>
         public Cliente Titular { get; set; }
 
+        /// <summary>
+        /// Armazena a quantidade de Saques não permitidos
+        /// </summary>
         public int ContadorSaquesNaoPermitidos { get; private set; }
+
+        /// <summary>
+        /// Variável responsável pelo armazenamento da quantidade de transferências falhas.
+        /// </summary>
         public int ContadorTransferenciasNaoPermitidas { get; private set; }
 
+        /// <summary>
+        /// Número da conta.
+        /// </summary>
         public int Numero { get; }
+
+        /// <summary>
+        /// Número da agência da conta.
+        /// </summary>
         public int Agencia { get; }
 
         private double _saldo = 100;
+
+        /// <summary>
+        /// Valor do saldo atual da conta.
+        /// </summary>
         public double Saldo
         {
             get
@@ -87,11 +111,23 @@ namespace ByteBank.Modelos
             _saldo -= valor;
         }
 
+        /// <summary>
+        /// Deposita um valor a conta.
+        /// </summary>
+        /// <param name="valor">Valor a ser depositado, deve ser maior que zero.</param>
         public void Depositar(double valor)
         {
             _saldo += valor;
         }
 
+        /// <summary>
+        /// Efetua a transferencia de valor de uma conta para outra.
+        /// </summary>
+        /// <param name="valor">Valor a ser transferido, deve ser maior que zero.</param>
+        /// <param name="contaDestino">Conta que irá receber o valor transferido, não pode ser nula.</param>
+        /// <exception cref="ArgumentException">Referência lançada ao tentar depositar valor menor que zero.</exception>
+        /// <exception cref="SaldoInsuficienteException">Exceção lançada ao tentar transferir um valor maior que o saldo da conta origem.</exception>
+        /// <exception cref="OperacaoFinanceiraException">Exceção lançada para operações que não puderam ser concluídas com sucesso.</exception>
         public void Transferir(double valor, ContaCorrente contaDestino)
         {
             if (valor < 0)
@@ -109,7 +145,23 @@ namespace ByteBank.Modelos
                 throw new OperacaoFinanceiraException("Operação não realizada.", ex);
             }
 
+
             contaDestino.Depositar(valor);
+        }
+
+        /// <summary>
+        /// Sobrecarga do método equals para comparar o número da agência e o número da conta.
+        /// </summary>
+        /// <param name="obj">Deve ser passado um objeto do tipo <see cref="ContaCorrente" />.</param>
+        /// <returns></returns>
+        public override bool Equals(object obj)
+        {
+            ContaCorrente outraConta = obj as ContaCorrente;
+
+            if (outraConta == null)
+                return false;
+
+            return outraConta.Numero.Equals(this.Numero) && outraConta.Agencia.Equals(this.Agencia);
         }
     }
 
