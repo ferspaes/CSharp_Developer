@@ -13,18 +13,25 @@ namespace ByteBank.SistemaAgencia
         static void Main(string[] args)
         {
             ListaDeContaCorrente lista = new ListaDeContaCorrente();
-            lista.Adicionar(new ContaCorrente(1234, 123456));
-            lista.Adicionar(new ContaCorrente(1234, 456789));
-            lista.Adicionar(new ContaCorrente(1234, 789012));
-            lista.Adicionar(new ContaCorrente(1234, 012345));
-            lista.Adicionar(new ContaCorrente(5678, 123456));
-            lista.Adicionar(new ContaCorrente(5678, 456789));
-            lista.Adicionar(new ContaCorrente(5678, 789012));
-            lista.Adicionar(new ContaCorrente(5678, 012345));
-            lista.Adicionar(new ContaCorrente(9012, 012345));
-            lista.Adicionar(new ContaCorrente(9012, 567890));
-            lista.Adicionar(new ContaCorrente(9012, 456789));
-            lista.Adicionar(new ContaCorrente(9012, 789012));
+
+
+            List<ListaDeContaCorrente> lorem = new List<ListaDeContaCorrente>();
+
+            lista.AdicionarVarios
+            (
+                new ContaCorrente(1234, 123456),
+                new ContaCorrente(1234, 456789),
+                new ContaCorrente(1234, 789012),
+                new ContaCorrente(1234, 012345),
+                new ContaCorrente(5678, 123456),
+                new ContaCorrente(5678, 456789),
+                new ContaCorrente(5678, 789012),
+                new ContaCorrente(5678, 012345),
+                new ContaCorrente(9012, 012345),
+                new ContaCorrente(9012, 567890),
+                new ContaCorrente(9012, 456789),
+                new ContaCorrente(9012, 789012)
+             );
 
             for (int i = 0; i < lista.Tamanho; i++)
             {
