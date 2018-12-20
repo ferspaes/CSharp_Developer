@@ -28,7 +28,7 @@ namespace ByteBank.SistemaAgencia
 
             for (int i = 0; i < lista.Tamanho; i++)
             {
-                ContaCorrente itemAtual = lista.GetItemNoIndice(i);
+                ContaCorrente itemAtual = lista[i];
                 Console.WriteLine($"Item na posição {i} = Conta {itemAtual.Agencia}/{itemAtual.Numero}");
             }
 

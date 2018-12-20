@@ -35,9 +35,22 @@ namespace ByteBank.SistemaAgencia
             _proximaPosicao++;
         }
 
-        public void Remover()
+        public void AdicionarVarios(params ContaCorrente[] itens)
         {
-            //In Progress...
+            foreach (ContaCorrente conta in itens)
+            {
+                Adicionar(conta);
+            }
+        }
+
+        public void Remover(int indice)
+        {
+            for (int i = indice; i < _itens.Length - 1; i++)
+            {
+                _itens[indice] = _itens[indice + 1];
+            }
+
+            _proximaPosicao--;
         }
 
         private void VerificarCapacidade(int tamanhoNecessario)
@@ -65,7 +78,6 @@ namespace ByteBank.SistemaAgencia
 
             return _itens[indice];
         }
-    
 
         public void Remover(ContaCorrente item)
         {
@@ -99,5 +111,6 @@ namespace ByteBank.SistemaAgencia
                 return GetItemNoIndice(indice);
             }
         }
+
     }
 }
