@@ -3,6 +3,7 @@ using ByteBank.SistemaAgencia.Comparadores;
 using ByteBank.SistemaAgencia.Extensoes;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ByteBank.SistemaAgencia
 {
@@ -10,6 +11,34 @@ namespace ByteBank.SistemaAgencia
     {
         static void Main(string[] args)
         {
+            var contas = new List<ContaCorrente>()
+            {
+                new ContaCorrente(123, 428347),
+                null,
+                new ContaCorrente(234, 743629),
+                null,
+                new ContaCorrente(345, 934872),
+                new ContaCorrente(456, 834273),
+                null,
+                new ContaCorrente(567, 389422),
+                new ContaCorrente(678, 128937),
+            };
+
+            var contasOrdenadas = contas.OrderBy(conta =>
+            {
+                if (conta == null)
+                    return int.MaxValue;
+
+                return conta.Agencia;
+            });
+
+            foreach (var conta in contas)
+            {
+                if (conta != null)
+                    Console.WriteLine(conta);
+            }
+
+
 
             var nomes = new List<string>()
             {
@@ -43,22 +72,6 @@ namespace ByteBank.SistemaAgencia
                 Console.WriteLine(idade);
             }
 
-            var contas = new List<ContaCorrente>()
-            {
-                new ContaCorrente(123, 428347),
-                new ContaCorrente(234, 743629),
-                new ContaCorrente(345, 934872),
-                new ContaCorrente(456, 834273),
-                new ContaCorrente(567, 389422),
-                new ContaCorrente(678, 128937),
-            };
-
-            contas.Sort();
-
-            foreach (var conta in contas)
-            {
-                Console.WriteLine(conta);
-            }
 
             contas.Sort(new ComparadorContaCorrentePorAgencia());
 
