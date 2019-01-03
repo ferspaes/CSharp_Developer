@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ByteBank.SistemaAgencia
+namespace ByteBank.SistemaAgencia.Extensoes
 {
-    public static class ListExtensoes<T>
+    public static class ListExtensoes
     {
-        public static void AdicionarVarios(List<T> lista, params T[] items)
+        public static void AdicionarVarios<T>(this List<T> lista, params T[] items)
         {
-            foreach (T item in items)
+            foreach (var item in items)
             {
                 lista.Add(item);
             }
