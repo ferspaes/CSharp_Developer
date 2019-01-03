@@ -3,7 +3,7 @@
 
 #### Thats all you need to know to be a C Sharp Developer
 
-This course is from Alura and the URL is right here [Alura - C Sharp Developer Course](https://cursos.alura.com.br/career/desenvolvedor-csharp)
+This course is from Alura and the URL is right here [Alura - C Sharp Developer Course](https://www.alura.com.br/carreira-desenvolvedor-csharp)
 
 ### Requirements:
 
