@@ -32,10 +32,13 @@ namespace ByteBank.SistemaAgencia
                 return conta.Agencia;
             });
 
-            foreach (var conta in contas)
+            var contasNaoNulas = contas
+                .Where(conta => conta != null)
+                .OrderBy(conta => conta.Agencia);
+
+            foreach (var conta in contasNaoNulas)
             {
-                if (conta != null)
-                    Console.WriteLine(conta);
+                Console.WriteLine(conta);
             }
 
 
