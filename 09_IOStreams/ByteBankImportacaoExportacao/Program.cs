@@ -12,20 +12,32 @@ namespace ByteBankImportacaoExportacao
     {
         static void Main(string[] args)
         {
+            string pathExercicio = "teste.txt";
             string pathTXT = "contas.txt";
-
             var buffer = new byte[1024];
-
             var fluxoArquivo = new FileStream(pathTXT, FileMode.Open); // FileStream(pathTXT, FileMode)3);
+            var fsExercicio = new FileStream(pathExercicio, FileMode.Open);
+            var listFileStream = new List<FileStream>();
+            var encoding = Encoding.Default;
 
-            int contadorLeitura = -1;
+            listFileStream.Add(fluxoArquivo);
+            listFileStream.Add(fsExercicio);
 
-            while (contadorLeitura != 0)
+            foreach (var arquivo in listFileStream)
             {
-                contadorLeitura = fluxoArquivo.Read(buffer, 0, 1024);
-                EscreverBuffer(buffer);
-                Console.WriteLine();
-                Console.WriteLine("Leu!!!");
+                int contadorLeitura = -1;
+
+                while (contadorLeitura != 0)
+                {
+                    contadorLeitura = arquivo.Read(buffer, 0, buffer.Length);
+                    var conteudoArquivo = encoding.GetString(buffer, 0, contadorLeitura);
+
+                    if (!string.IsNullOrWhiteSpace(conteudoArquivo))
+                    {
+                        Console.WriteLine(conteudoArquivo);
+                        Console.WriteLine("Leu!!!");
+                    }
+                }
             }
 
             Console.ReadLine();
