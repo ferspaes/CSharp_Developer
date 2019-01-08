@@ -12,8 +12,9 @@ namespace ByteBankImportacaoExportacao
     {
         static void Main(string[] args)
         {
-            
-
+            string path = CriadorCSV();
+            Console.WriteLine($"Arquivo: {path}");
+            LeitorCSV(path);
             Console.ReadLine();
         }
     }

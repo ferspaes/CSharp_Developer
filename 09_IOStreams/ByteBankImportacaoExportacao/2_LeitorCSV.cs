@@ -10,10 +10,8 @@ namespace ByteBankImportacaoExportacao
 {
     partial class Program
     {
-        void LeitorCSV()
+        static void LeitorCSV(string path)
         {
-            string path = "contas.csv";
-
             using (var fs = new FileStream(path, FileMode.Open))
             using (var leitor = new StreamReader(fs))
             {

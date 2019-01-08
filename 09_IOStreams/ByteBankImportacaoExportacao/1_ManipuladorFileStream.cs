@@ -10,7 +10,7 @@ namespace ByteBankImportacaoExportacao
 {
     partial class Program
     {
-        void ManipuladorFileStream()
+        static void ManipuladorFileStream()
         {
             string pathExercicio = "teste.txt";
             string pathTXT = "contas.txt";
@@ -49,7 +49,7 @@ namespace ByteBankImportacaoExportacao
 
         public static ContaCorrente ConversorLinhaEmContaCorrente(string linha)
         {
-            var valores = linha.Split(' ');
+            var valores = linha.Split(',');
             var agencia = int.Parse(valores[0]);
             var numeroConta = int.Parse(valores[1]);
             var saldo = double.Parse(valores[2]/*.Replace('.', ',')*/);

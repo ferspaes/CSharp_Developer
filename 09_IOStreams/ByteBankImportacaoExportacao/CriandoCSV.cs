@@ -10,5 +10,16 @@ namespace ByteBankImportacaoExportacao
 {
     partial class Program
     {
+        static string CriadorCSV()
+        {
+            string path = DateTime.Now.ToString("HHmmss") + "_Conta.csv";
+
+            using (var fs = new FileStream(path, FileMode.CreateNew))
+            using (var escritor = new StreamWriter(fs))
+            {
+                escritor.Write("123,38742,1234.40,Fulano Teste");
+            }
+            return path;
+        }
     }
 }
