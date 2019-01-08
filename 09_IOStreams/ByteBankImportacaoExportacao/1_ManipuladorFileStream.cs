@@ -46,5 +46,38 @@ namespace ByteBankImportacaoExportacao
                 Console.Write("");
             }
         }
+
+        public static ContaCorrente ConversorLinhaEmContaCorrente(string linha)
+        {
+            var valores = linha.Split(' ');
+            var agencia = int.Parse(valores[0]);
+            var numeroConta = int.Parse(valores[1]);
+            var saldo = double.Parse(valores[2]/*.Replace('.', ',')*/);
+            var cliente = new Cliente();
+            var conta = new ContaCorrente(agencia, numeroConta);
+            string nome = valores[3];
+
+            cliente.Nome = nome;
+            conta.Depositar(saldo);
+            conta.Titular = cliente;
+
+            return conta;
+        }
+
+        void LendoArquivoTXT()
+        {
+            string pathArquivo = "teste.txt";
+            using (var fs = new FileStream(pathArquivo, FileMode.Open))
+            using (var leitor = new StreamReader(fs))
+            {
+                while (!leitor.EndOfStream)
+                {
+                    var linha = leitor.ReadLine();
+                    var conta = ConversorLinhaEmContaCorrente(linha);
+                    string msg = $"Agência: {conta.Agencia}. Número: {conta.Numero}. Saldo: ${conta.Saldo}";
+                    Console.WriteLine(msg);
+                }
+            }
+        }
     }
 }

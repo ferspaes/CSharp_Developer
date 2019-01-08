@@ -43,6 +43,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="1_ManipuladorFileStream.cs" />
+    <Compile Include="2_LeitorCSV.cs" />
+    <Compile Include="CriandoCSV.cs" />
     <Compile Include="Modelos\Cliente.cs" />
     <Compile Include="Modelos\ContaCorrente.cs" />
     <Compile Include="Program.cs" />
