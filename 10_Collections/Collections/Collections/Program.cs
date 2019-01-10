@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Collections.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,10 +11,34 @@ namespace Collections
     {
         static void Main(string[] args)
         {
-            string aulaIntro = "1 - Introdução";
-            string aulaArrays = "2 - Arrays";
-            string aulaColecoes = "3 - Aula sobre Coleções";
+            var aulaIntro = new Aula("1 - Introdução", 20);
+            var aulaArrays = new Aula("2 - Arrays", 15);
+            var aulaColecoes = new Aula("3 - Aula sobre Coleções", 18);
 
+            List<Aula> aulas = new List<Aula>();
+            aulas.Add(aulaIntro);
+            aulas.Add(aulaArrays);
+            aulas.Add(aulaColecoes);
+
+            aulas.ForEach(aula =>
+            {
+                string resultado = aula.ToString();
+                Console.WriteLine(resultado);
+            });
+
+            Console.Read();
+
+            string aulaIntroOld = "1 - Introdução";
+            string aulaArraysOld = "2 - Arrays";
+            string aulaColecoesOld = "3 - Aula sobre Coleções";
+
+            TrabalhandoComListas(aulaIntroOld, aulaArraysOld, aulaColecoesOld);
+            TrabalhandoComArrays(aulaIntroOld, aulaArraysOld, aulaColecoesOld);
+        }
+
+        #region Aulas Anteriores
+        private static void TrabalhandoComListas(string aulaIntro, string aulaArrays, string aulaColecoes)
+        {
             List<string> aulasLista = new List<string>()
             {
                 aulaIntro,
@@ -41,10 +66,6 @@ namespace Collections
             {
                 Console.WriteLine(aula);
             });
-
-            Console.Read();
-
-            TrabalhandoComArrays(aulaIntro, aulaArrays, aulaColecoes);
         }
 
         private static void TrabalhandoComArrays(string aulaIntro, string aulaArrays, string aulaColecoes)
@@ -95,5 +116,6 @@ namespace Collections
                 Console.WriteLine(aulas[i]);
             }
         }
+        #endregion // Aulas Anteriores
     }
 }
