@@ -22,10 +22,14 @@ namespace Collections
 
             aulas.ForEach(aula =>
             {
-                string resultado = aula.ToString();
-                Console.WriteLine(resultado);
+                Console.WriteLine(aula.ToString());
             });
 
+            aulas.Sort();
+            aulas.ForEach(aula => Console.WriteLine(aula.ToString()));
+
+            aulas.Sort((aulaX, aulaY) => aulaX.Tempo.CompareTo(aulaY.Tempo));
+            aulas.ForEach(aula => Console.WriteLine(aula.ToString()));
             Console.Read();
 
             string aulaIntroOld = "1 - Introdução";
