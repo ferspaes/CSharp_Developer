@@ -14,12 +14,47 @@ namespace Collections
             string aulaArrays = "2 - Arrays";
             string aulaColecoes = "3 - Aula sobre Coleções";
 
-            string[] aulas = new string[]
+            List<string> aulasLista = new List<string>()
             {
                 aulaIntro,
                 aulaArrays,
                 aulaColecoes
             };
+
+            List<string> aulas = new List<string>();
+            aulas.Add(aulaIntro);
+            aulas.Add(aulaArrays);
+            aulas.Add(aulaColecoes);
+
+            // -= ESCREVER LISTA COM List.ForEach(_=>_code...);
+            aulas.ForEach(aula =>
+            {
+                Console.WriteLine(aula);
+            });
+
+            aulas.Sort();
+            aulas.RemoveAt(2);
+            aulas.Add(aulaIntro);
+            aulas[2] = "3 - Conclusão";
+
+            aulas.ForEach(aula =>
+            {
+                Console.WriteLine(aula);
+            });
+
+            Console.Read();
+
+            TrabalhandoComArrays(aulaIntro, aulaArrays, aulaColecoes);
+        }
+
+        private static void TrabalhandoComArrays(string aulaIntro, string aulaArrays, string aulaColecoes)
+        {
+            string[] aulas = new string[]
+                        {
+                aulaIntro,
+                aulaArrays,
+                aulaColecoes
+                        };
 
             EscreverArray(aulas);
 
@@ -44,8 +79,6 @@ namespace Collections
 
             aulas[aulas.Length - 1] = aulaColecoes;
             EscreverArray(aulas);
-
-            Console.Read();
         }
 
         private static void EscreverArray(string[] aulas)
