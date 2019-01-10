@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Collections.Model
 {
-    class Aula : IComparable
+    public class Aula : IComparable
     {
         private string nome;
         private int tempo;

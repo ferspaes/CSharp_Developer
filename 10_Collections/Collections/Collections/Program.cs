@@ -11,6 +11,25 @@ namespace Collections
     {
         static void Main(string[] args)
         {
+            Curso cursoCollections = new Curso("C# - Collections", "Nome do Instrutor");
+            cursoCollections.AdicionarAula(new Aula("Trabalhando com Collections", 20));
+
+            ImprimirLista(cursoCollections);
+
+            Console.Read();
+            AulasListArrayOld();
+        }
+
+        private static void ImprimirLista(Curso cursoCollections)
+        {
+            foreach (var aula in cursoCollections.Aulas)
+            {
+                Console.WriteLine(aula);
+            }
+        }
+
+        private static void AulasListArrayOld()
+        {
             var aulaIntro = new Aula("1 - Introdução", 20);
             var aulaArrays = new Aula("2 - Arrays", 15);
             var aulaColecoes = new Aula("3 - Aula sobre Coleções", 18);
@@ -30,7 +49,6 @@ namespace Collections
 
             aulas.Sort((aulaX, aulaY) => aulaX.Tempo.CompareTo(aulaY.Tempo));
             aulas.ForEach(aula => Console.WriteLine(aula.ToString()));
-            Console.Read();
 
             string aulaIntroOld = "1 - Introdução";
             string aulaArraysOld = "2 - Arrays";
