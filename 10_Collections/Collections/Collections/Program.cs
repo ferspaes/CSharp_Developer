@@ -11,13 +11,63 @@ namespace Collections
     {
         static void Main(string[] args)
         {
+            ISet<string> alunos = new HashSet<string>();
+
+            alunos.Add("Amanda");
+            alunos.Add("Fernando");
+            alunos.Add("Rodrigo");
+            alunos.Add("Mariana");
+            alunos.Add("Fabio");
+            Console.WriteLine(string.Join(", ", alunos));
+
+            // Removendo e adicionando novos valores 
+            alunos.Add("Roselyn");
+            alunos.Remove("Mariana");
+            alunos.Add("Ana");
+            Console.WriteLine("\n -= Removendo Mariana e adicionando Ana e Roselyn =-");
+            Console.WriteLine(string.Join(", ", alunos));
+
+            // Adicionando valores iguais
+            alunos.Add("Fabio");
+            alunos.Add("Rodrigo");
+            Console.WriteLine("\n -= Adicionando valores iguais =-");
+            Console.WriteLine(string.Join(", ", alunos));
+
+            // Copiando para uma lista para poder usar Sort()
+            List<string> alunosCopia = new List<string>(alunos);
+            alunosCopia.Sort();
+            Console.WriteLine("\n -= Imprimindo copia do tipo List<string>(); =-");
+            Console.WriteLine(string.Join(", ", alunosCopia));
+
+            // Imprimindo
+            Console.WriteLine("\n -= Impressão dos valores após todas as manipulações. =-");
+            Console.WriteLine(string.Join(", ", alunos));
+
+            Console.Read();
+            AulaCompletaListas();
+            AulasListArrayOld();
+        }
+
+        private static void AulaCompletaListas()
+        {
             Curso cursoCollections = new Curso("C# - Collections", "Nome do Instrutor");
             cursoCollections.AdicionarAula(new Aula("Trabalhando com Collections", 20));
 
+            //Adicionar Mais Duas Aulas
+            cursoCollections.AdicionarAula(new Aula("Operações com Collections", 15));
+            cursoCollections.AdicionarAula(new Aula("Conclusão Listas", 36));
+
+            // Imprimir Lista
             ImprimirLista(cursoCollections);
 
-            Console.Read();
-            AulasListArrayOld();
+            // Copiar Lista
+            List<Aula> aulasCopia = new List<Aula>(cursoCollections.Aulas);
+
+            // Ordenar Lista
+            aulasCopia.Sort();
+
+            // Imprimir Curso
+            Console.WriteLine(cursoCollections.ToString());
         }
 
         private static void ImprimirLista(Curso cursoCollections)

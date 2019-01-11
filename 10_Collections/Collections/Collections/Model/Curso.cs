@@ -42,5 +42,21 @@ namespace Collections.Model
             get { return instrutor; }
             set { instrutor = value; }
         }
+
+        private int tempoTotal;
+
+        public int TempoTotal
+        {
+            get
+            {
+                tempoTotal = aulas.Sum(aula => aula.Tempo);
+                return tempoTotal;
+            }
+        }
+
+        public override string ToString()
+        {
+            return $"Curso: {NomeCurso}, Tempo: {TempoTotal}, Aulas: {string.Join(",", aulas)}";
+        }
     }
 }
