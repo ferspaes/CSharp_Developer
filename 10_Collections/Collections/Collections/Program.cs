@@ -11,6 +11,34 @@ namespace Collections
     {
         static void Main(string[] args)
         {
+            Curso curso = new Curso("C# Collections", "Professor Rafael");
+            Aluno a1 = new Aluno("Fabiana", 123456);
+            Aluno a2 = new Aluno("Marcelo", 641651);
+            Aluno a3 = new Aluno("Henrique", 415415);
+            Aluno a4 = new Aluno("Ana", 652646);
+            Aluno a5 = new Aluno("Rodrigo", 618454);
+            Aluno a6 = new Aluno("Fernando", 165441);
+
+            curso.Matricular(a1);
+            curso.Matricular(a2);
+            curso.Matricular(a3);
+            curso.Matricular(a4);
+            curso.Matricular(a5);
+            curso.Matricular(a6);
+
+            foreach (var aluno in curso.Alunos)
+            {
+                Console.WriteLine(aluno);
+            }
+
+            Console.Read();
+            AulaDeSets();
+            AulaCompletaListas();
+            AulasListArrayOld();
+        }
+
+        private static void AulaDeSets()
+        {
             ISet<string> alunos = new HashSet<string>();
 
             alunos.Add("Amanda");
@@ -42,10 +70,6 @@ namespace Collections
             // Imprimindo
             Console.WriteLine("\n -= Impressão dos valores após todas as manipulações. =-");
             Console.WriteLine(string.Join(", ", alunos));
-
-            Console.Read();
-            AulaCompletaListas();
-            AulasListArrayOld();
         }
 
         private static void AulaCompletaListas()

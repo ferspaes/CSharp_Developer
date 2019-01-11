@@ -9,9 +9,18 @@ namespace Collections.Model
 {
     public class Curso
     {
+        private ISet<Aluno> alunos = new HashSet<Aluno>();
         private IList<Aula> aulas;
         private string nomeCurso;
         private string instrutor;
+
+        public IList<Aluno> Alunos
+        {
+            get
+            {
+                return new ReadOnlyCollection<Aluno>(alunos.ToList());
+            }
+        }
 
         public IList<Aula> Aulas
         {
@@ -52,6 +61,11 @@ namespace Collections.Model
                 tempoTotal = aulas.Sum(aula => aula.Tempo);
                 return tempoTotal;
             }
+        }
+
+        public void Matricular(Aluno aluno)
+        {
+            alunos.Add(aluno);
         }
 
         public override string ToString()
