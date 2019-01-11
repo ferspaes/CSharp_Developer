@@ -72,5 +72,10 @@ namespace Collections.Model
         {
             return $"Curso: {NomeCurso}, Tempo: {TempoTotal}, Aulas: {string.Join(",", aulas)}";
         }
+
+        public bool EstaMatriculado(Aluno aluno)
+        {
+            return alunos.Contains(aluno);
+        }
     }
 }

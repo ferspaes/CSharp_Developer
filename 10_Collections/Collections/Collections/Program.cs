@@ -26,6 +26,12 @@ namespace Collections
             curso.Matricular(a5);
             curso.Matricular(a6);
 
+            Aluno alunoTeste = new Aluno("Teste", 123456);
+            Console.WriteLine(alunoTeste.Equals(a1) ? "\nÉ igual.\n" : "\nNão é igual.\n");
+
+            Console.WriteLine(curso.EstaMatriculado(a1) ? "\nSim\n" : "\nNão\n");
+            Console.WriteLine(curso.EstaMatriculado(alunoTeste) ? "\nSim\n" : "\nNão\n");
+
             foreach (var aluno in curso.Alunos)
             {
                 Console.WriteLine(aluno);

@@ -33,5 +33,16 @@ namespace Collections.Model
         {
             return $"[Aluno: {nome}, Matrícula: {numeroMatricula}]";
         }
+
+        public override bool Equals(object obj)
+        {
+            Aluno outro = obj as Aluno;
+            return this.nome.Equals(outro.nome);
+        }
+
+        public override int GetHashCode()
+        {
+            return this.nome.GetHashCode();
+        }
     }
 }
