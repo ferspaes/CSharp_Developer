@@ -29,15 +29,24 @@ namespace Collections
             Aluno alunoTeste = new Aluno("Teste", 123456);
             Console.WriteLine(alunoTeste.Equals(a1) ? "\nÉ igual.\n" : "\nNão é igual.\n");
 
-            Console.WriteLine(curso.EstaMatriculado(a1) ? "\nSim\n" : "\nNão\n");
-            Console.WriteLine(curso.EstaMatriculado(alunoTeste) ? "\nSim\n" : "\nNão\n");
+            Console.WriteLine(curso.EstaMatriculado(a1) ? "\nSim.\n" : "\nNão.\n");
+            Console.WriteLine(curso.EstaMatriculado(alunoTeste) ? "\nSim.\n" : "\nNão.\n");
+
+            var retorno = curso.BuscarMatricula(123456);
+            string msg = retorno != null ? $"Aluno: {retorno.ToString()}.\n" : $"Não foi encontrado aluno com a matrícula digitada.\n";
+            Console.WriteLine(msg);
+
+            retorno = curso.BuscarMatricula(18465);
+            msg = retorno != null ? $"Aluno: {retorno.ToString()}.\n" : $"Não foi encontrado aluno com a matrícula digitada.\n";
+            Console.WriteLine(msg);
+
+            Console.Read();
 
             foreach (var aluno in curso.Alunos)
             {
                 Console.WriteLine(aluno);
             }
 
-            Console.Read();
             AulaDeSets();
             AulaCompletaListas();
             AulasListArrayOld();

@@ -9,6 +9,8 @@ namespace Collections.Model
 {
     public class Curso
     {
+
+        private IDictionary<int, Aluno> dicAlunos = new Dictionary<int, Aluno>();
         private ISet<Aluno> alunos = new HashSet<Aluno>();
         private IList<Aula> aulas;
         private string nomeCurso;
@@ -52,6 +54,13 @@ namespace Collections.Model
             set { instrutor = value; }
         }
 
+        internal Aluno BuscarMatricula(int matricula)
+        {
+            Aluno aluno = null;
+            dicAlunos.TryGetValue(matricula, out aluno);
+            return aluno;
+        }
+
         private int tempoTotal;
 
         public int TempoTotal
@@ -66,6 +75,7 @@ namespace Collections.Model
         public void Matricular(Aluno aluno)
         {
             alunos.Add(aluno);
+            dicAlunos.Add(aluno.NumeroMatricula, aluno);
         }
 
         public override string ToString()
