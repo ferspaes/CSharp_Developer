@@ -75,7 +75,7 @@ namespace Collections.Model
         public void Matricular(Aluno aluno)
         {
             alunos.Add(aluno);
-            dicAlunos.Add(aluno.NumeroMatricula, aluno);
+            dicAlunos[aluno.NumeroMatricula] = aluno;
         }
 
         public override string ToString()

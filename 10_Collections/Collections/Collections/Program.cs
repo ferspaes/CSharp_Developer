@@ -11,6 +11,18 @@ namespace Collections
     {
         static void Main(string[] args)
         {
+            var teste = new Dictionary<int, string>();
+
+            teste.Add(123, "teste");
+            //teste.Add(123, "teste igual"); => exception!
+            teste[234] = "teste2";
+            teste[123] = "teste1";
+
+            foreach (var par in teste)
+            {
+                Console.WriteLine($"[Key: {par.Key}, Value: {par.Value}]");
+            }
+
             Curso curso = new Curso("C# Collections", "Professor Rafael");
             Aluno a1 = new Aluno("Fabiana", 123456);
             Aluno a2 = new Aluno("Marcelo", 641651);
@@ -18,6 +30,10 @@ namespace Collections
             Aluno a4 = new Aluno("Ana", 652646);
             Aluno a5 = new Aluno("Rodrigo", 618454);
             Aluno a6 = new Aluno("Fernando", 165441);
+
+            Aluno testeMatricula = new Aluno("Aluno Teste", 123);
+
+            curso.Matricular(testeMatricula);
 
             curso.Matricular(a1);
             curso.Matricular(a2);
