@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Collections.Model
+namespace Collections_2.Model
 {
-    public class Aula : IComparable
+    public class Aula
     {
         private string nome;
         private int tempo;
