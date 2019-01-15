@@ -62,7 +62,7 @@ namespace Collections_2
             colecao.IntersectWith(outroConjunto);
 
             //somente em um ou outro conjunto - SymmetricExceptWith
-            colecao.SymmetricExceptWith(outroConjunto;
+            colecao.SymmetricExceptWith(outroConjunto);
 
             //união de conjuntos - UnionWith
             colecao.UnionWith(outroConjunto);
