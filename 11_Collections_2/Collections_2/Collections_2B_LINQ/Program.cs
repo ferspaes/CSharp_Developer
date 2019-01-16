@@ -135,6 +135,33 @@ namespace Collections_2B_LINQ
                 Console.WriteLine(item);
             }
 
+            string[] mesesArray = new string[]
+            {
+                "Janeiro",
+                "Fevereiro",
+                "Março",
+                "Abril",
+                "Maio",
+                "Junho",
+                "Julho",
+                "Agosto",
+                "Setembro",
+                "Outubro",
+                "Novembro",
+                "Dezembro"
+            };
+
+            // object[] mesesArrayObj = mesesArray; // ERRADO VAI DAR EXCEPETION AO TENTAR INSERIR VALORES DE OUTRO TIPO QUE NÃO SEJA O TIPO QUE ELE RECEBEU
+
+            IEnumerable<object> mesesEnum = meses; // COVARIANÇiA
+
+            Console.WriteLine($"\nCOVARIANÇIA E CONTRACOVARIANÇIA");
+
+            foreach (var item in mesesEnum)
+            {
+                Console.WriteLine(item);
+            }
+
             Console.Read();
         }
     }
