@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Collections_2", "Collection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Collections_2A", "Collections_2A\Collections_2A.csproj", "{18346DFF-BEB9-4044-A3FA-A375CDA5D341}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Collections_2B_LINQ", "Collections_2B_LINQ\Collections_2B_LINQ.csproj", "{3AF9CE26-323F-4622-B214-279040151353}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{18346DFF-BEB9-4044-A3FA-A375CDA5D341}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18346DFF-BEB9-4044-A3FA-A375CDA5D341}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18346DFF-BEB9-4044-A3FA-A375CDA5D341}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AF9CE26-323F-4622-B214-279040151353}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AF9CE26-323F-4622-B214-279040151353}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AF9CE26-323F-4622-B214-279040151353}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AF9CE26-323F-4622-B214-279040151353}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
